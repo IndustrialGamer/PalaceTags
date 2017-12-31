@@ -92,52 +92,54 @@ public class Tags extends JavaPlugin implements Listener {
         saveConfig();
 
         if(tag == "dono"){
-            p.setDisplayName(ChatColor.DARK_RED + "" + ChatColor.MAGIC + "a" + ChatColor.DARK_RED + "Dono" + ChatColor.MAGIC + "a " + ChatColor.DARK_RED + " " + p.getName());
+
+            tagDono(p);
 
         }
         if (tag == "sd") {
 
-            p.setDisplayName(ChatColor.AQUA + "" + ChatColor.MAGIC + "a" + ChatColor.AQUA + "Subdono" + ChatColor.MAGIC + "a" + ChatColor.AQUA + " " + p.getName());
+            tagSubno(p);
+
         }
         if (tag == "adm") {
 
-            p.setDisplayName(ChatColor.RED + "" + ChatColor.MAGIC + "a" + ChatColor.RED + "Admin" + ChatColor.MAGIC + "a" + ChatColor.RED + " " + p.getName());
+            tagAdmin(p);
         }
         if (tag == "lider") {
 
-            p.setDisplayName(ChatColor.RED + "" + ChatColor.MAGIC + "a" + ChatColor.RED + "Lider" + ChatColor.MAGIC + "a" + ChatColor.RED + " " + p.getName());
+           tagLider(p);
         }
         if (tag == "mod") {
 
-            p.setDisplayName(ChatColor.DARK_GREEN + "" + ChatColor.MAGIC + "a" + ChatColor.DARK_GREEN + "Mod" + ChatColor.MAGIC + "a" + ChatColor.DARK_GREEN + " " + p.getName());
+          tagMod(p);
         }
         if (tag == "aj") {
 
-            p.setDisplayName(ChatColor.GREEN + "" + ChatColor.MAGIC + "a" + ChatColor.GREEN + "Ajudante" + ChatColor.MAGIC + "a" + ChatColor.GREEN + " " + p.getName());
+           tagAjudante(p);
         }
         if (tag == "vipvit") {
 
-            p.setDisplayName(ChatColor.BLUE + "" + ChatColor.MAGIC + "a" + ChatColor.BLUE + "Vip" + ChatColor.MAGIC + "a" + ChatColor.BLUE + " " + p.getName());
+           tagVipVit(p);
         }
         if (tag == "vip") {
 
-            p.setDisplayName(ChatColor.YELLOW + "" + ChatColor.MAGIC + "a" + ChatColor.YELLOW + "Vip" + ChatColor.MAGIC + "a" + ChatColor.YELLOW + " " + p.getName());
+            tagVip(p);
         }
         if (tag == "yt") {
 
-            p.setDisplayName(ChatColor.BLACK + "" + ChatColor.MAGIC + "a" + ChatColor.BLACK + "You" + ChatColor.GOLD + "Tube" + ChatColor.MAGIC + "a" + ChatColor.RED + " " + p.getName());
+           tagYt(p);
         }
         if (tag == "staff") {
 
-            p.setDisplayName(ChatColor.GOLD + "" + ChatColor.MAGIC + "a" + ChatColor.GOLD + "Staff" + ChatColor.MAGIC + "a" + ChatColor.GOLD + " " + p.getName());
+           tagStaff(p);
         }
         if (tag == "test") {
 
-            p.setDisplayName(ChatColor.DARK_AQUA + "" + ChatColor.MAGIC + "a" + ChatColor.DARK_AQUA + "Testador" + ChatColor.MAGIC + "a" + ChatColor.DARK_AQUA + " " + p.getName());
+            tagTestador(p);
         }
         if (tag == "padrao") {
 
-            p.setDisplayName(ChatColor.GRAY + p.getName());
+            tagOff(p);
         }
 
         TextComponent message = new TextComponent(p.getDisplayName() + ChatColor.WHITE + ": " + e.getMessage());
@@ -258,186 +260,104 @@ public class Tags extends JavaPlugin implements Listener {
             if (args.length == 1) {
                 if (args[0].equalsIgnoreCase("dono")) {
                     if (p.hasPermission("tag.tag.dono")) {
-                        tagdono.addPlayer(p);
-                        this.getConfig().set(p.getName(), "dono");
-                        saveConfig();
-                        p.setScoreboard(board);
-                        p.setDisplayName(ChatColor.DARK_RED + "" + ChatColor.MAGIC + "a" + ChatColor.DARK_RED + "Dono" + ChatColor.MAGIC + "a " + ChatColor.DARK_RED + " " + p.getName());
-                        tagdono.setPrefix(ChatColor.DARK_RED + "" + ChatColor.MAGIC + "a" + ChatColor.DARK_RED + ChatColor.BOLD + "ADM ");
-                        tagdono.setSuffix(ChatColor.DARK_RED + "" + ChatColor.BOLD + "" + ChatColor.ITALIC + " Dono" + ChatColor.DARK_RED + ChatColor.MAGIC + "a");
+                        tagDono(p);
 
-
-                        p.sendMessage(ChatColor.BLUE + "Tag> " + ChatColor.GREEN + "Voce esta usando a tag " + ChatColor.DARK_RED + ChatColor.MAGIC + "a" + ChatColor.DARK_RED + "DONO" + ChatColor.MAGIC + "a" + ChatColor.GREEN + " agora!");
-                    }
+                      }
                 }
 
                 if (args[0].equalsIgnoreCase("subdono")) {
                     if (p.hasPermission("tag.tag.subdono")) {
-                        this.getConfig().set(p.getName(), "sd");
-                        saveConfig();
-                        p.setScoreboard(board);
-                        tagsubdono.addPlayer(p);
+                        tagSubno(p);
 
-                        tagsubdono.setPrefix(ChatColor.AQUA + "" + ChatColor.BOLD + "ADM ");
-                        p.setDisplayName(ChatColor.AQUA + "" + ChatColor.MAGIC + "a" + ChatColor.AQUA + "Subdono" + ChatColor.MAGIC + "a" + ChatColor.AQUA + " " + p.getName());
-                        tagsubdono.setSuffix(" Subdono");
-                        p.sendMessage(ChatColor.BLUE + "Tag> " + ChatColor.GREEN + "Voce esta usando a tag " + ChatColor.AQUA + ChatColor.MAGIC + "a" + ChatColor.AQUA + "SUBDONO" + ChatColor.MAGIC + "a" + ChatColor.GREEN + " agora!");
                     }
                 }
                 if (args[0].equalsIgnoreCase("sd")) {
                     if (p.hasPermission("tag.tag.subdono")) {
-                        this.getConfig().set(p.getName(), "sd");
-                        saveConfig();
-                        p.setDisplayName(ChatColor.AQUA + "" + ChatColor.MAGIC + "a" + ChatColor.AQUA + "Subdono" + ChatColor.MAGIC + "a" + ChatColor.AQUA + " " + p.getName());
-                        p.setScoreboard(board);
-                        tagsubdono.addPlayer(p);
+                        tagSubno(p);
 
-                        tagsubdono.setPrefix(ChatColor.AQUA + "" + ChatColor.BOLD + "ADM ");
-
-                        tagsubdono.setSuffix(" Subdono");
-                        p.sendMessage(ChatColor.BLUE + "Tag> " + ChatColor.GREEN + "Voce esta usando a tag " + ChatColor.AQUA + ChatColor.MAGIC + "a" + ChatColor.AQUA + "SUBDONO" + ChatColor.MAGIC + "a" + ChatColor.GREEN + " agora!");
                     }
                 }
 
 
                 if (args[0].equalsIgnoreCase("admin")) {
                     if (p.hasPermission("tag.tag.admin")) {
-                        this.getConfig().set(p.getName(), "adm");
-                        saveConfig();
-                        p.setScoreboard(board);
-                        tagadmin.addPlayer(p);
-                        p.setDisplayName(ChatColor.RED + "" + ChatColor.MAGIC + "a" + ChatColor.RED + "Admin" + ChatColor.MAGIC + "a" + ChatColor.RED + " " + p.getName());
-                        tagadmin.setPrefix(ChatColor.RED + "" + ChatColor.BOLD + "ADM ");
-                        tagadmin.setSuffix(ChatColor.RED + "" + ChatColor.ITALIC + " Admin");
-                        p.sendMessage(ChatColor.BLUE + "Tag> " + ChatColor.GREEN + "Voce esta usando a tag " + ChatColor.RED + ChatColor.MAGIC + "a" + ChatColor.RED + "ADMIN" + ChatColor.MAGIC + "a" + ChatColor.GREEN + " agora!");
-                    }
+                        tagAdmin(p);
+
+                       }
                 }
                 if (args[0].equalsIgnoreCase("lider")) {
                     if (p.hasPermission("tag.tag.admin")) {
-                        this.getConfig().set(p.getName(), "lider");
-                        saveConfig();
-                        p.setScoreboard(board);
-                        taglider.addPlayer(p);
-                        p.setDisplayName(ChatColor.RED + "" + ChatColor.MAGIC + "a" + ChatColor.RED + "Lider" + ChatColor.MAGIC + "a" + ChatColor.RED + " " + p.getName());
-                        taglider.setPrefix(ChatColor.RED + "" + ChatColor.BOLD + "ADM ");
-                        taglider.setSuffix(ChatColor.RED + "" + ChatColor.ITALIC + " Lider");
-                        p.sendMessage(ChatColor.BLUE + "Tag> " + ChatColor.GREEN + "Voce esta usando a tag " + ChatColor.RED + ChatColor.MAGIC + "a" + ChatColor.RED + "LIDER" + ChatColor.MAGIC + "a" + ChatColor.GREEN + " agora!");
+
+                    tagLider(p);
                     }
                 }
                 if (args[0].equalsIgnoreCase("mod")) {
                     if (p.hasPermission("tag.tag.mod")) {
-                        this.getConfig().set(p.getName(), "mod");
-                        saveConfig();
-                        tagmod.addPlayer(p);
-                        p.setScoreboard(board);
-                        p.setDisplayName(ChatColor.DARK_GREEN + "" + ChatColor.MAGIC + "a" + ChatColor.DARK_GREEN + "Mod" + ChatColor.MAGIC + "a" + ChatColor.DARK_GREEN + " " + p.getName());
-                        tagmod.setPrefix(ChatColor.DARK_GREEN + "" + ChatColor.BOLD + "MOD ");
-                        tagmod.setSuffix(ChatColor.DARK_GREEN + "" + ChatColor.ITALIC + " Moderador");
-                        p.sendMessage(ChatColor.BLUE + "Tag> " + ChatColor.GREEN + "Voce esta usando a tag " + ChatColor.DARK_GREEN + ChatColor.MAGIC + "a" + ChatColor.DARK_GREEN + "MODERADOR" + ChatColor.MAGIC + "a" + ChatColor.GREEN + " agora!");
+
+                        tagMod(p);
+
                     }
                 }
                 if (args[0].equalsIgnoreCase("ajudante")) {
                     if (p.hasPermission("tag.tag.ajudante")) {
-                        this.getConfig().set(p.getName(), "aj");
-                        saveConfig();
-                        p.setScoreboard(board);
-                        p.setDisplayName(ChatColor.GREEN + "" + ChatColor.MAGIC + "a" + ChatColor.GREEN + "Ajudante" + ChatColor.MAGIC + "a" + ChatColor.GREEN + " " + p.getName());
-                        tagajudante.addPlayer(p);
-                        tagajudante.setPrefix(ChatColor.GREEN + "" + ChatColor.BOLD + "MOD ");
-                        tagajudante.setSuffix(ChatColor.GREEN + "" + ChatColor.BOLD + " Ajudante");
-                        p.sendMessage(ChatColor.BLUE + "Tag> " + ChatColor.GREEN + "Voce esta usando a tag " + ChatColor.GREEN + ChatColor.MAGIC + "a" + ChatColor.GREEN + "AJUDANTE" + ChatColor.MAGIC + "a" + ChatColor.GREEN + " agora!");
+
+                        tagAjudante(p);
+
                     }
                 }
                 if (args[0].equalsIgnoreCase("aj")) {
                     if (p.hasPermission("tag.tag.ajudante")) {
-                        this.getConfig().set(p.getName(), "aj");
-                        saveConfig();
-                        p.setScoreboard(board);
-                        p.setDisplayName(ChatColor.GREEN + "" + ChatColor.MAGIC + "a" + ChatColor.GREEN + "Ajudante" + ChatColor.MAGIC + "a" + ChatColor.GREEN + " " + p.getName());
-                        tagajudante.addPlayer(p);
-                        tagajudante.setPrefix(ChatColor.GREEN + "" + ChatColor.BOLD + "MOD ");
-                        tagajudante.setSuffix(ChatColor.GREEN + "" + ChatColor.BOLD + " Ajudante");
-                        p.sendMessage(ChatColor.BLUE + "Tag> " + ChatColor.GREEN + "Voce esta usando a tag " + ChatColor.GREEN + ChatColor.MAGIC + "a" + ChatColor.GREEN + "AJUDANTE" + ChatColor.MAGIC + "a" + ChatColor.GREEN + " agora!");
+
+                    tagAjudante(p);
+
                     }
                 }
                 if (args[0].equalsIgnoreCase("vipvit")) {
                     if (p.hasPermission("tag.tag.vipvit")) {
-                        this.getConfig().set(p.getName(), "vipvit");
-                        saveConfig();
-                        p.setScoreboard(board);
-                        p.setDisplayName(ChatColor.BLUE + "" + ChatColor.MAGIC + "a" + ChatColor.BLUE + "Vip" + ChatColor.MAGIC + "a" + ChatColor.BLUE + " " + p.getName());
-                        tagvipvit.addPlayer(p);
-                        tagvipvit.setPrefix(ChatColor.BLUE + "" + ChatColor.BOLD + "VIP ");
-                        tagvipvit.setSuffix(ChatColor.BLUE + "" + ChatColor.ITALIC + " Eterno");
-                        p.sendMessage(ChatColor.BLUE + "Tag> " + ChatColor.GREEN + "Voce esta usando a tag " + ChatColor.BLUE + ChatColor.MAGIC + "a" + ChatColor.BLUE + "VipVit" + ChatColor.MAGIC + "a" + ChatColor.GREEN + " agora!");
+
+                    tagVipVit(p);
+
                     }
                 }
                 if (args[0].equalsIgnoreCase("vip")) {
                     if (p.hasPermission("tag.tag.vip")) {
-                        this.getConfig().set(p.getName(), "vip");
-                        saveConfig();
-                        p.setScoreboard(board);
-                        p.setDisplayName(ChatColor.YELLOW + "" + ChatColor.MAGIC + "a" + ChatColor.YELLOW + "Vip" + ChatColor.MAGIC + "a" + ChatColor.YELLOW + " " + p.getName());
-                        tagvip.addPlayer(p);
-                        tagvip.setPrefix(ChatColor.YELLOW + "" + ChatColor.BOLD + "VIP ");
-                        p.sendMessage(ChatColor.BLUE + "Tag> " + ChatColor.GREEN + "Voce esta usando a tag " + ChatColor.YELLOW + ChatColor.MAGIC + "a" + ChatColor.YELLOW + "VIP" + ChatColor.MAGIC + "a" + ChatColor.GREEN + " agora!");
+
+                        tagVip(p);
+
                     }
                 }
                 if (args[0].equalsIgnoreCase("youtube")) {
                     if (p.hasPermission("tag.tag.youtube")) {
-                        p.setScoreboard(board);
-                        this.getConfig().set(p.getName(), "yt");
-                        saveConfig();
-                        p.setDisplayName(ChatColor.BLACK + "" + ChatColor.MAGIC + "a" + ChatColor.BLACK + "You" + ChatColor.GOLD + "Tube" + ChatColor.MAGIC + "a" + ChatColor.RED + " " + p.getName());
-                        tagyt.addPlayer(p);
-                        tagyt.setPrefix(ChatColor.BLACK + "" + ChatColor.MAGIC + "a" + ChatColor.BOLD + "" + ChatColor.BLACK + "You " + ChatColor.RED);
-                        tagyt.setSuffix(ChatColor.GOLD + " Tube" + ChatColor.MAGIC + "a");
-                        p.sendMessage(ChatColor.BLUE + "Tag> " + ChatColor.GREEN + "Voce esta usando a tag " + ChatColor.BLACK + "" + ChatColor.MAGIC + "a" + ChatColor.BOLD + "" + ChatColor.BLACK + "You" + ChatColor.GOLD + "Tube" + ChatColor.MAGIC + "a" + ChatColor.GREEN + " agora!");
+
+                    tagYt(p);
+
                     }
                 }
                 if (args[0].equalsIgnoreCase("yt")) {
                     if (p.hasPermission("tag.tag.youtube")) {
-                        p.setScoreboard(board);
-                        this.getConfig().set(p.getName(), "yt");
-                        saveConfig();
-
-                        p.setDisplayName(ChatColor.BLACK + "" + ChatColor.MAGIC + "a" + ChatColor.BLACK + "You" + ChatColor.GOLD + "Tube" + ChatColor.MAGIC + "a" + ChatColor.RED + " " + p.getName());
-                        tagyt.addPlayer(p);
-                        tagyt.setPrefix(ChatColor.BLACK + "" + ChatColor.MAGIC + "a" + ChatColor.BOLD + "" + ChatColor.BLACK + "You " + ChatColor.RED);
-                        tagyt.setSuffix(ChatColor.GOLD + " Tube" + ChatColor.MAGIC + "a");
-                        p.sendMessage(ChatColor.BLUE + "Tag> " + ChatColor.GREEN + "Voce esta usando a tag " + ChatColor.BLACK + "" + ChatColor.MAGIC + "a" + ChatColor.BOLD + "" + ChatColor.BLACK + "You" + ChatColor.GOLD + "Tube" + ChatColor.MAGIC + "a" + ChatColor.GREEN + " agora!");
+                      //tagYt(p);
+                        p.sendMessage(ChatColor.DARK_RED + "Mudar Tag> " + ChatColor.RED + "A tag YouTuber esta temporariametne offline, devido a um erro na programacao! Em breve ela estara de volta :)");
                     }
                 }
                 if (args[0].equalsIgnoreCase("off")) {
                     if (p.hasPermission("tag.tag.off")) {
-                        tagpadrao.addPlayer(p);
-                        this.getConfig().set(p.getName(), "padrao");
-                        saveConfig();
-                        p.setDisplayName(ChatColor.GRAY + p.getName());
 
-                        p.sendMessage(ChatColor.BLUE + "Tag> " + ChatColor.GREEN + "Voce esta sem tag agora!");
+                        tagOff(p);
+
                     }
                 }
                 if (args[0].equalsIgnoreCase("staff")) {
                     if (p.hasPermission("tag.tag.staff")) {
-                        this.getConfig().set(p.getName(), "staff");
-                        saveConfig();
-                        p.setScoreboard(board);
-                        tagstaff.addPlayer(p);
-                        p.setDisplayName(ChatColor.GOLD + "" + ChatColor.MAGIC + "a" + ChatColor.GOLD + "Staff" + ChatColor.MAGIC + "a" + ChatColor.GOLD + " " + p.getName());
-                        tagstaff.setPrefix(ChatColor.GOLD + "Staff ");
-                        p.sendMessage(ChatColor.BLUE + "Tag> " + ChatColor.GREEN + "Voce esta usando a tag " + ChatColor.GOLD + "" + ChatColor.MAGIC + "a" + ChatColor.GOLD + "Staff" + ChatColor.MAGIC + "a" + ChatColor.GREEN + " agora!");
+
+                        tagStaff(p);
+
                     }
                 }
                 if (args[0].equalsIgnoreCase("testador")) {
                     if (p.hasPermission("tag.tag.testador")) {
-                        p.setScoreboard(board);
-                        this.getConfig().set(p.getName(), "test");
-                        saveConfig();
-                        tagtestador.addPlayer(p);
-                        p.setDisplayName(ChatColor.DARK_AQUA + "" + ChatColor.MAGIC + "a" + ChatColor.DARK_AQUA + "Testador" + ChatColor.MAGIC + "a" + ChatColor.DARK_AQUA + " " + p.getName());
-                        tagtestador.setPrefix(ChatColor.DARK_AQUA + "Testador ");
-                        p.sendMessage(ChatColor.BLUE + "Tag> " + ChatColor.GREEN + "Voce esta com a tag " + ChatColor.DARK_AQUA + "" + ChatColor.MAGIC + "a" + ChatColor.DARK_AQUA + "Testador" + ChatColor.MAGIC + "a" + ChatColor.GREEN + " agora!");
+
+                    tagTestador(p);
+
                     }
                 }
             } else if (args.length == 1) {
@@ -450,17 +370,6 @@ public class Tags extends JavaPlugin implements Listener {
             }
 
         }
-
-
-
-
-
-
-
-
-
-
-
 
         if (command.getName().equalsIgnoreCase("settag")) {
             Player p = (Player) sender;
@@ -479,152 +388,90 @@ public class Tags extends JavaPlugin implements Listener {
 
                 if (args[1].equalsIgnoreCase("dono")) {
                     if (p.hasPermission("tag.tag.dono")) {
-                        tagdono.addPlayer(target);
-                        this.getConfig().set(target.getName(), "dono");
-                        saveConfig();
-                        target.setScoreboard(board);
-                        target.setDisplayName(ChatColor.DARK_RED + "" + ChatColor.MAGIC + "a" + ChatColor.DARK_RED + "Dono" + ChatColor.MAGIC + "a " + ChatColor.DARK_RED + " " + target.getName());
-                        tagdono.setPrefix(ChatColor.DARK_RED + "" + ChatColor.MAGIC + "a" + ChatColor.DARK_RED + ChatColor.BOLD + "ADM ");
-                        tagdono.setSuffix(ChatColor.DARK_RED + "" + ChatColor.BOLD + "" + ChatColor.ITALIC + " Dono" + ChatColor.DARK_RED + ChatColor.MAGIC + "a");
 
+                        tagDono(target);
+                        target.sendMessage(ChatColor.GOLD + "Mudar Tag> " + ChatColor.AQUA + "O player " + ChatColor.DARK_PURPLE + p.getName() + ChatColor.AQUA + " mudou a sua tag");
 
-                        target.sendMessage(ChatColor.BLUE + "Tag> " + ChatColor.GREEN + "O player " + p.getName() + " mudou sua tag para" + ChatColor.DARK_RED + ChatColor.MAGIC + "a" + ChatColor.DARK_RED + "DONO" + ChatColor.MAGIC + "a");
-                        p.sendMessage(ChatColor.GOLD + "Tag> " + ChatColor.AQUA + "Voce mudou a tag do player " + ChatColor.DARK_PURPLE + target.getName() + ChatColor.AQUA + " para " + ChatColor.DARK_RED + ChatColor.MAGIC + "a" + ChatColor.DARK_RED + "DONO" + ChatColor.MAGIC + "a");
                     }
                 }
 
                 if (args[1].equalsIgnoreCase("subdono")) {
                     if (p.hasPermission("tag.tag.subdono")) {
-                        this.getConfig().set(target.getName(), "sd");
-                        saveConfig();
-                        target.setScoreboard(board);
-                        tagsubdono.addPlayer(target);
 
-                        tagsubdono.setPrefix(ChatColor.AQUA + "" + ChatColor.BOLD + "ADM ");
-                        target.setDisplayName(ChatColor.AQUA + "" + ChatColor.MAGIC + "a" + ChatColor.AQUA + "Subdono" + ChatColor.MAGIC + "a" + ChatColor.AQUA + " " + target.getName());
-                        tagsubdono.setSuffix(" Subdono");
-                        target.sendMessage(ChatColor.BLUE + "Tag> " + ChatColor.GREEN + "O player " + p.getName() + " mudou sua tag para " + ChatColor.AQUA + ChatColor.MAGIC + "a" + ChatColor.AQUA + "SUBDONO" + ChatColor.MAGIC + "a");
-                        p.sendMessage(ChatColor.GOLD + "Tag> " + ChatColor.AQUA + "Voce mudou a tag do player " + ChatColor.DARK_PURPLE + target.getName() + ChatColor.AQUA + " para " + ChatColor.AQUA + ChatColor.MAGIC + "a" + ChatColor.AQUA + "SUBDONO" + ChatColor.MAGIC + "a");
+                    tagSubno(target);
+                        target.sendMessage(ChatColor.GOLD + "Mudar Tag> " + ChatColor.AQUA + "O player " + ChatColor.DARK_PURPLE + p.getName() + ChatColor.AQUA + " mudou a sua tag");
+
                     }
                 }
                 if (args[1].equalsIgnoreCase("sd")) {
                     if (p.hasPermission("tag.tag.subdono")) {
                         this.getConfig().set(target.getName(), "sd");
-                        saveConfig();
-                        target.setScoreboard(board);
-                        tagsubdono.addPlayer(target);
 
-                        tagsubdono.setPrefix(ChatColor.AQUA + "" + ChatColor.BOLD + "ADM ");
-                        target.setDisplayName(ChatColor.AQUA + "" + ChatColor.MAGIC + "a" + ChatColor.AQUA + "Subdono" + ChatColor.MAGIC + "a" + ChatColor.AQUA + " " + target.getName());
-                        tagsubdono.setSuffix(" Subdono");
-                        target.sendMessage(ChatColor.BLUE + "Tag> " + ChatColor.GREEN + "O player " + p.getName() + " mudou sua tag para " + ChatColor.AQUA + ChatColor.MAGIC + "a" + ChatColor.AQUA + "SUBDONO" + ChatColor.MAGIC + "a");
-                        p.sendMessage(ChatColor.GOLD + "Tag> " + ChatColor.AQUA + "Voce mudou a tag do player " + ChatColor.DARK_PURPLE + target.getName() + ChatColor.AQUA + " para " + ChatColor.AQUA + ChatColor.MAGIC + "a" + ChatColor.AQUA + "SUBDONO" + ChatColor.MAGIC + "a");
+                    tagSubno(target);
+                        target.sendMessage(ChatColor.GOLD + "Mudar Tag> " + ChatColor.AQUA + "O player " + ChatColor.DARK_PURPLE + p.getName() + ChatColor.AQUA + " mudou a sua tag");
                     }
                 }
 
 
                 if (args[1].equalsIgnoreCase("admin")) {
                     if (p.hasPermission("tag.tag.admin")) {
-                        this.getConfig().set(target.getName(), "adm");
-                        saveConfig();
-                        target.setScoreboard(board);
-                        tagadmin.addPlayer(target);
-                        target.setDisplayName(ChatColor.RED + "" + ChatColor.MAGIC + "a" + ChatColor.RED + "Admin" + ChatColor.MAGIC + "a" + ChatColor.RED + " " + target.getName());
-                        tagadmin.setPrefix(ChatColor.RED + "" + ChatColor.BOLD + "ADM ");
-                        tagadmin.setSuffix(ChatColor.RED + "" + ChatColor.ITALIC + " Admin");
-                        target.sendMessage(ChatColor.BLUE + "Tag> " + ChatColor.GREEN + "O player " + p.getName() + "mudou sua tag para " + ChatColor.RED + ChatColor.MAGIC + "a" + ChatColor.RED + "ADMIN" + ChatColor.MAGIC + "a");
-                        p.sendMessage(ChatColor.GOLD + "Tag> " + ChatColor.AQUA + "Voce mudou a tag do player " + ChatColor.DARK_PURPLE + target.getName() + ChatColor.AQUA + " para " + ChatColor.RED + ChatColor.MAGIC + "a" + ChatColor.RED + "ADMIN" + ChatColor.MAGIC + "a");
+
+                        tagAdmin(target);
+                        target.sendMessage(ChatColor.GOLD + "Mudar Tag> " + ChatColor.AQUA + "O player " + ChatColor.DARK_PURPLE + p.getName() + ChatColor.AQUA + " mudou a sua tag");
                     }
                 }
                 if (args[1].equalsIgnoreCase("lider")) {
                     if (p.hasPermission("tag.tag.admin")) {
-                        this.getConfig().set(p.getName(), "lider");
-                        saveConfig();
-                        target.setScoreboard(board);
-                        taglider.addPlayer(target);
-                        target.setDisplayName(ChatColor.RED + "" + ChatColor.MAGIC + "a" + ChatColor.RED + "Lider" + ChatColor.MAGIC + "a" + ChatColor.RED + " " + target.getName());
-                        taglider.setPrefix(ChatColor.RED + "" + ChatColor.BOLD + "ADM ");
-                        taglider.setSuffix(ChatColor.RED + "" + ChatColor.ITALIC + " Lider");
-                        target.sendMessage(ChatColor.BLUE + "Tag> " + ChatColor.GREEN + "O player " + p.getName() + " mudou sua tag para " + ChatColor.RED + ChatColor.MAGIC + "a" + ChatColor.RED + "LIDER" + ChatColor.MAGIC + "a");
-                        p.sendMessage(ChatColor.GOLD + "Tag> " + ChatColor.AQUA + "Voce mudou a tag do player " + ChatColor.DARK_PURPLE + target.getName() + ChatColor.AQUA + " para " + ChatColor.RED + ChatColor.MAGIC + "a" + ChatColor.RED + "LIDER" + ChatColor.MAGIC + "a");
 
+                        tagLider(target);
+                        target.sendMessage(ChatColor.GOLD + "Mudar Tag> " + ChatColor.AQUA + "O player " + ChatColor.DARK_PURPLE + p.getName() + ChatColor.AQUA + " mudou a sua tag");
                     }
                 }
                 if (args[1].equalsIgnoreCase("mod")) {
                     if (p.hasPermission("tag.tag.mod")) {
-                        this.getConfig().set(target.getName(), "mod");
-                        saveConfig();
-                        tagmod.addPlayer(target);
-                        target.setScoreboard(board);
-                        target.setDisplayName(ChatColor.DARK_GREEN + "" + ChatColor.MAGIC + "a" + ChatColor.DARK_GREEN + "Mod" + ChatColor.MAGIC + "a" + ChatColor.DARK_GREEN + " " + target.getName());
-                        tagmod.setPrefix(ChatColor.DARK_GREEN + "" + ChatColor.BOLD + "MOD ");
-                        tagmod.setSuffix(ChatColor.DARK_GREEN + "" + ChatColor.ITALIC + " Moderador");
-                        target.sendMessage(ChatColor.BLUE + "Tag> " + ChatColor.GREEN + "O player " + p.getName() + " mudou sua tag para" + ChatColor.DARK_GREEN + ChatColor.MAGIC + "a" + ChatColor.DARK_GREEN + "MODERADOR" + ChatColor.MAGIC + "a");
-                        p.sendMessage(ChatColor.GOLD + "Tag> " + ChatColor.AQUA + "Voce mudou a tag do player " + ChatColor.DARK_PURPLE + target.getName() + ChatColor.AQUA + " para " + ChatColor.DARK_GREEN + ChatColor.MAGIC + "a" + ChatColor.DARK_GREEN + "MODERADOR" + ChatColor.MAGIC + "a");
+
+                        tagMod(target);
+                        target.sendMessage(ChatColor.GOLD + "Mudar Tag> " + ChatColor.AQUA + "O player " + ChatColor.DARK_PURPLE + p.getName() + ChatColor.AQUA + " mudou a sua tag");
                     }
                 }
 
                 if (args[0].equalsIgnoreCase("aj")) {
                     if (p.hasPermission("tag.tag.ajudante")) {
-                        this.getConfig().set(target.getName(), "aj");
-                        saveConfig();
-                        target.setScoreboard(board);
-                        target.setDisplayName(ChatColor.GREEN + "" + ChatColor.MAGIC + "a" + ChatColor.GREEN + "Ajudante" + ChatColor.MAGIC + "a" + ChatColor.GREEN + " " + target.getName());
-                        tagajudante.addPlayer(target);
-                        tagajudante.setPrefix(ChatColor.GREEN + "" + ChatColor.BOLD + "MOD ");
-                        tagajudante.setSuffix(ChatColor.GREEN + "" + ChatColor.BOLD + " Ajudante");
-                        target.sendMessage(ChatColor.BLUE + "Tag> " + ChatColor.GREEN + "O player " + p.getName() + "mudou sua tag para" + ChatColor.GREEN + ChatColor.MAGIC + "a" + ChatColor.GREEN + "AJUDANTE" + ChatColor.MAGIC + "a");
-                        p.sendMessage(ChatColor.GOLD + "Tag> " + ChatColor.AQUA + "Voce mudou a tag do player " + ChatColor.DARK_PURPLE + target.getName() + ChatColor.AQUA + " para " + ChatColor.GREEN + ChatColor.MAGIC + "a" + ChatColor.GREEN + "AJUDANTE" + ChatColor.MAGIC + "a");
+
+                    tagAjudante(target);
+                        target.sendMessage(ChatColor.GOLD + "Mudar Tag> " + ChatColor.AQUA + "O player " + ChatColor.DARK_PURPLE + p.getName() + ChatColor.AQUA + " mudou a sua tag");
                     }
                 }
                 if (args[1].equalsIgnoreCase("vipvit")) {
                     if (p.hasPermission("tag.tag.vipvit")) {
-                        this.getConfig().set(target.getName(), "vipvit");
-                        saveConfig();
-                        target.setScoreboard(board);
-                        target.setDisplayName(ChatColor.BLUE + "" + ChatColor.MAGIC + "a" + ChatColor.BLUE + "Vip" + ChatColor.MAGIC + "a" + ChatColor.BLUE + " " + target.getName());
-                        tagvipvit.addPlayer(target);
-                        tagvipvit.setPrefix(ChatColor.BLUE + "" + ChatColor.BOLD + "VIP ");
-                        tagvipvit.setSuffix(ChatColor.BLUE + "" + ChatColor.ITALIC + " Eterno");
-                        target.sendMessage(ChatColor.BLUE + "Tag> " + ChatColor.GREEN + "O player " + p.getName() + " mudou sua tag para" + ChatColor.BLUE + ChatColor.MAGIC + "a" + ChatColor.BLUE + "VipVit" + ChatColor.MAGIC + "a");
-                        p.sendMessage(ChatColor.GOLD + "Tag> " + ChatColor.AQUA + "Voce mudou a tag do player " + ChatColor.DARK_PURPLE + target.getName() + ChatColor.AQUA + " para " + ChatColor.BLUE + ChatColor.MAGIC + "a" + ChatColor.BLUE + "VipVit" + ChatColor.MAGIC + "a");
+
+                        tagVipVit(target);
+                        target.sendMessage(ChatColor.GOLD + "Mudar Tag> " + ChatColor.AQUA + "O player " + ChatColor.DARK_PURPLE + p.getName() + ChatColor.AQUA + " mudou a sua tag");
                     }
                 }
                 if (args[1].equalsIgnoreCase("vip")) {
                     if (p.hasPermission("tag.tag.vip")) {
-                        this.getConfig().set(target.getName(), "vip");
-                        saveConfig();
-                        target.setScoreboard(board);
-                        target.setDisplayName(ChatColor.YELLOW + "" + ChatColor.MAGIC + "a" + ChatColor.YELLOW + "Vip" + ChatColor.MAGIC + "a" + ChatColor.YELLOW + " " + target.getName());
-                        tagvip.addPlayer(target);
-                        tagvip.setPrefix(ChatColor.YELLOW + "" + ChatColor.BOLD + "VIP ");
-                        target.sendMessage(ChatColor.BLUE + "Tag> " + ChatColor.GREEN + "O player " + p.getName() + " mudou sua tag para" + ChatColor.YELLOW + ChatColor.MAGIC + "a" + ChatColor.YELLOW + "VIP" + ChatColor.MAGIC + "a");
-                        p.sendMessage(ChatColor.GOLD + "Tag> " + ChatColor.AQUA + "Voce mudou a tag do player " + ChatColor.DARK_PURPLE + target.getName() + ChatColor.AQUA + " para " + ChatColor.YELLOW + ChatColor.MAGIC + "a" + ChatColor.YELLOW + "VIP" + ChatColor.MAGIC + "a");
+
+                        tagVip(target);
+                        target.sendMessage(ChatColor.GOLD + "Mudar Tag> " + ChatColor.AQUA + "O player " + ChatColor.DARK_PURPLE + p.getName() + ChatColor.AQUA + " mudou a sua tag");
                     }
                 }
 
 
                 if (args[1].equalsIgnoreCase("yt")) {
                     if (p.hasPermission("tag.tag.youtube")) {
-                        target.setScoreboard(board);
-                        this.getConfig().set(target.getName(), "yt");
-                        saveConfig();
-
-                        target.setDisplayName(ChatColor.BLACK + "" + ChatColor.MAGIC + "a" + ChatColor.BLACK + "You" + ChatColor.GOLD + "Tube" + ChatColor.MAGIC + "a" + ChatColor.RED + " " + target.getName());
-                        tagyt.addPlayer(target);
-                        tagyt.setPrefix(ChatColor.BLACK + "" + ChatColor.MAGIC + "a" + ChatColor.BOLD + "" + ChatColor.BLACK + "You " + ChatColor.RED);
-                        tagyt.setSuffix(ChatColor.GOLD + " Tube" + ChatColor.MAGIC + "a");
-                        target.sendMessage(ChatColor.BLUE + "Tag> " + ChatColor.GREEN + "O player " + p.getName() + " mudou sua tag para " + ChatColor.BLACK + "" + ChatColor.MAGIC + "a" + ChatColor.BOLD + "" + ChatColor.BLACK + "You" + ChatColor.GOLD + "Tube" + ChatColor.MAGIC + "a" + ChatColor.GREEN + " agora!");
+/*
+                        tagYt(target);
+                        target.sendMessage(ChatColor.GOLD + "Mudar Tag> " + ChatColor.AQUA + "O player " + ChatColor.DARK_PURPLE + p.getName() + ChatColor.AQUA + " mudou a sua tag");
+  */
+                    p.sendMessage(ChatColor.DARK_RED + "Mudar Tag> " + ChatColor.RED + "A tag YouTuber esta temporariametne offline, devido a um erro na programacao! Em breve ela estara de volta :)");
                     }
                 }
                 if (args[1].equalsIgnoreCase("off")) {
                     if (p.hasPermission("tag.tag.off")) {
-                        tagpadrao.addPlayer(target);
-                        this.getConfig().set(target.getName(), "padrao");
-                        saveConfig();
-                        target.setDisplayName(ChatColor.GRAY + target.getName());
 
-                        target.sendMessage(ChatColor.BLUE + "Tag> " + ChatColor.GREEN + "O player " + p.getName() + " desabilitou sua tag");
+                    tagOff(target);
+                        target.sendMessage(ChatColor.GOLD + "Mudar Tag> " + ChatColor.AQUA + "O player " + ChatColor.DARK_PURPLE + p.getName() + ChatColor.AQUA + " mudou a sua tag");
                     }
                 }
 
@@ -645,6 +492,167 @@ public class Tags extends JavaPlugin implements Listener {
 
         return false;
       }
+
+      void tagDono (Player p)  {
+
+          tagdono.addPlayer(p);
+          this.getConfig().set(p.getName(), "dono");
+          saveConfig();
+          p.setScoreboard(board);
+          p.setDisplayName( ChatColor.DARK_RED + "" + ChatColor.BOLD + "" + ChatColor.MAGIC + "a" + ChatColor.DARK_RED + "DONO" + ChatColor.MAGIC + "a " + ChatColor.DARK_RED + " " + p.getName());
+          tagdono.setPrefix(ChatColor.DARK_RED + "" + ChatColor.BOLD + "ADM " + ChatColor.WHITE);
+          tagdono.setSuffix(ChatColor.DARK_RED + "" + ChatColor.BOLD + "" + ChatColor.ITALIC + " Dono");
+
+
+          p.sendMessage(ChatColor.BLUE + "Tag> " + ChatColor.GREEN + "Voce esta usando a tag " + ChatColor.DARK_RED + ChatColor.MAGIC + "a" + ChatColor.DARK_RED + "DONO" + ChatColor.MAGIC + "a" + ChatColor.GREEN + " agora!");
+
+
+
+      }
+    void tagSubno (Player p)  {
+
+        this.getConfig().set(p.getName(), "sd");
+        saveConfig();
+        p.setScoreboard(board);
+        tagsubdono.addPlayer(p);
+
+        tagsubdono.setPrefix(ChatColor.AQUA + "" + ChatColor.BOLD + "ADM " + ChatColor.WHITE );
+        p.setDisplayName(ChatColor.BOLD + "" + ChatColor.AQUA + "" + ChatColor.MAGIC + "a" + ChatColor.AQUA + "SUBDONO" + ChatColor.MAGIC + "a" + ChatColor.AQUA + " " + p.getName());
+        tagsubdono.setSuffix(ChatColor.AQUA + ""  + ChatColor.BOLD + " Subdono");
+        p.sendMessage(ChatColor.BLUE + "Tag> " + ChatColor.GREEN + "Voce esta usando a tag " + ChatColor.AQUA + ChatColor.MAGIC + "a" + ChatColor.AQUA + "SUBDONO" + ChatColor.MAGIC + "a" + ChatColor.GREEN + " agora!");
+
+    }
+
+
+
+    void tagAdmin(Player p)  {
+
+        this.getConfig().set(p.getName(), "adm");
+        saveConfig();
+        p.setScoreboard(board);
+        tagadmin.addPlayer(p);
+        p.setDisplayName(ChatColor.BOLD + "" + ChatColor.RED + "" + ChatColor.MAGIC + "a" + ChatColor.RED + "ADMIN" + ChatColor.MAGIC + "a" + ChatColor.RED + " " + p.getName());
+        tagadmin.setPrefix(ChatColor.RED + "" + ChatColor.BOLD + "ADM " + ChatColor.WHITE);
+        tagadmin.setSuffix(ChatColor.RED + "" + ChatColor.ITALIC + " Admin");
+        p.sendMessage(ChatColor.BLUE + "Tag> " + ChatColor.GREEN + "Voce esta usando a tag " + ChatColor.RED + ChatColor.MAGIC + "a" + ChatColor.RED + "ADMIN" + ChatColor.MAGIC + "a" + ChatColor.GREEN + " agora!");
+
+
+    }
+
+    void tagLider (Player p) {
+
+        this.getConfig().set(p.getName(), "lider");
+        saveConfig();
+        p.setScoreboard(board);
+        taglider.addPlayer(p);
+        p.setDisplayName(ChatColor.BOLD + "" + ChatColor.RED + "" + ChatColor.MAGIC + "a" + ChatColor.RED + "LIDER" + ChatColor.MAGIC + "a" + ChatColor.RED + " " + p.getName());
+        taglider.setPrefix(ChatColor.RED + "" + ChatColor.BOLD + "ADM " + ChatColor.WHITE);
+        taglider.setSuffix(ChatColor.RED + "" + ChatColor.ITALIC + " Lider");
+        p.sendMessage(ChatColor.BLUE + "Tag> " + ChatColor.GREEN + "Voce esta usando a tag " + ChatColor.RED + ChatColor.MAGIC + "a" + ChatColor.RED + "LIDER" + ChatColor.MAGIC + "a" + ChatColor.GREEN + " agora!");
+
+    }
+    void tagMod (Player p) {
+
+        this.getConfig().set(p.getName(), "mod");
+        saveConfig();
+        tagmod.addPlayer(p);
+        p.setScoreboard(board);
+        p.setDisplayName(ChatColor.BOLD + "" + ChatColor.DARK_GREEN + "" + ChatColor.MAGIC + "a" + ChatColor.DARK_GREEN + "MODERADOR" + ChatColor.MAGIC + "a" + ChatColor.DARK_GREEN + " " + p.getName());
+        tagmod.setPrefix(ChatColor.DARK_GREEN + "" + ChatColor.BOLD + "MOD " + ChatColor.WHITE );
+        tagmod.setSuffix(ChatColor.DARK_GREEN + "" + ChatColor.ITALIC + " Moderador");
+        p.sendMessage(ChatColor.BLUE + "Tag> " + ChatColor.GREEN + "Voce esta usando a tag " + ChatColor.DARK_GREEN + ChatColor.MAGIC + "a" + ChatColor.DARK_GREEN + "MODERADOR" + ChatColor.MAGIC + "a" + ChatColor.GREEN + " agora!");
+
+    }
+    void tagAjudante (Player p) {
+
+        this.getConfig().set(p.getName(), "aj");
+        saveConfig();
+        p.setScoreboard(board);
+        p.setDisplayName(ChatColor.BOLD + "" + ChatColor.GREEN + "" + ChatColor.MAGIC + "a" + ChatColor.GREEN + "AJUDANTE" + ChatColor.MAGIC + "a" + ChatColor.GREEN + " " + p.getName());
+        tagajudante.addPlayer(p);
+        tagajudante.setPrefix(ChatColor.GREEN + "" + ChatColor.BOLD + "MOD " + ChatColor.WHITE );
+        tagajudante.setSuffix(ChatColor.GREEN + "" + ChatColor.BOLD + " Ajudante");
+        p.sendMessage(ChatColor.BLUE + "Tag> " + ChatColor.GREEN + "Voce esta usando a tag " + ChatColor.GREEN + ChatColor.MAGIC + "a" + ChatColor.GREEN + "AJUDANTE" + ChatColor.MAGIC + "a" + ChatColor.GREEN + " agora!");
+
+
+    }
+
+    void tagVipVit (Player p) {
+
+        this.getConfig().set(p.getName(), "vipvit");
+        saveConfig();
+        p.setScoreboard(board);
+        p.setDisplayName(ChatColor.BOLD + "" + ChatColor.BLUE + "" + ChatColor.MAGIC + "a" + ChatColor.BLUE + "VIP" + ChatColor.MAGIC + "a" + ChatColor.BLUE + " " + p.getName());
+        tagvipvit.addPlayer(p);
+        tagvipvit.setPrefix(ChatColor.BLUE + "" + ChatColor.BOLD + "VIP " + ChatColor.WHITE);
+        tagvipvit.setSuffix(ChatColor.BLUE + "" + ChatColor.ITALIC + " Eterno");
+        p.sendMessage(ChatColor.BLUE + "Tag> " + ChatColor.GREEN + "Voce esta usando a tag " + ChatColor.BLUE + ChatColor.MAGIC + "a" + ChatColor.BLUE + "VipVit" + ChatColor.MAGIC + "a" + ChatColor.GREEN + " agora!");
+
+
+    }
+    void tagVip (Player p) {
+
+        this.getConfig().set(p.getName(), "vip");
+        saveConfig();
+        p.setScoreboard(board);
+        p.setDisplayName(ChatColor.BOLD + "" + ChatColor.YELLOW + "" + ChatColor.MAGIC + "a" + ChatColor.YELLOW + "VIP" + ChatColor.MAGIC + "a" + ChatColor.YELLOW + " " + p.getName());
+        tagvip.addPlayer(p);
+        tagvip.setPrefix(ChatColor.YELLOW + "" + ChatColor.BOLD + "VIP ");
+        p.sendMessage(ChatColor.BLUE + "Tag> " + ChatColor.GREEN + "Voce esta usando a tag " + ChatColor.YELLOW + ChatColor.MAGIC + "a" + ChatColor.YELLOW + "VIP" + ChatColor.MAGIC + "a" + ChatColor.GREEN + " agora!");
+
+
+    }
+    void tagYt (Player p){
+
+        p.setScoreboard(board);
+        this.getConfig().set(p.getName(), "yt");
+        saveConfig();
+        p.setDisplayName(ChatColor.BOLD + "" + ChatColor.BLACK + "" + ChatColor.MAGIC + "a" + ChatColor.BLACK + "YOU" + ChatColor.WHITE + "" + ChatColor.DARK_RED + "TUBER" + ChatColor.MAGIC + "a" + ChatColor.WHITE + "" + ChatColor.GOLD + " " + p.getName());
+        tagyt.addPlayer(p);
+        tagyt.setPrefix(ChatColor.BLACK + "YOU" + ChatColor.RED + "TUBER " + ChatColor.GOLD + p.getName());
+        //tagyt.setSuffix(ChatColor.DARK_RED + " TUBER");
+        p.sendMessage(ChatColor.BLUE + "Tag> " + ChatColor.GREEN + "Voce esta usando a tag " + ChatColor.BLACK + "" + ChatColor.MAGIC + "a" + ChatColor.BOLD + "" + ChatColor.BLACK + "YOU" + ChatColor.DARK_RED + "TUBER" + ChatColor.MAGIC + "a" + ChatColor.GREEN + " agora!");
+
+
+    }
+
+    void tagOff (Player p){
+
+        tagpadrao.addPlayer(p);
+        this.getConfig().set(p.getName(), "padrao");
+        saveConfig();
+        p.setDisplayName(ChatColor.GRAY + p.getName());
+
+        p.sendMessage(ChatColor.BLUE + "Tag> " + ChatColor.GREEN + "Voce esta sem tag agora!");
+
+    }
+
+    void tagStaff (Player p) {
+
+        this.getConfig().set(p.getName(), "staff");
+        saveConfig();
+        p.setScoreboard(board);
+        tagstaff.addPlayer(p);
+        p.setDisplayName(ChatColor.BOLD + "" + ChatColor.GOLD + "" + ChatColor.MAGIC + "a" + ChatColor.GOLD + "STAFF" + ChatColor.MAGIC + "a" + ChatColor.GOLD + " " + p.getName());
+        tagstaff.setPrefix(ChatColor.GOLD + "Staff ");
+        p.sendMessage(ChatColor.BLUE + "Tag> " + ChatColor.GREEN + "Voce esta usando a tag " + ChatColor.GOLD + "" + ChatColor.MAGIC + "a" + ChatColor.GOLD + "STAFF" + ChatColor.MAGIC + "a" + ChatColor.GREEN + " agora!");
+
+
+    }
+    void tagTestador (Player p) {
+
+        p.setScoreboard(board);
+        this.getConfig().set(p.getName(), "test");
+        saveConfig();
+        tagtestador.addPlayer(p);
+        p.setDisplayName(ChatColor.DARK_AQUA + "" + ChatColor.MAGIC + "a" + ChatColor.DARK_AQUA + "TESTADOR" + ChatColor.MAGIC + "a" + ChatColor.DARK_AQUA + " " + p.getName());
+        tagtestador.setPrefix(ChatColor.DARK_AQUA + "Testador ");
+        p.sendMessage(ChatColor.BLUE + "Tag> " + ChatColor.GREEN + "Voce esta com a tag " + ChatColor.DARK_AQUA + "" + ChatColor.MAGIC + "a" + ChatColor.DARK_AQUA + "TESTADOR" + ChatColor.MAGIC + "a" + ChatColor.GREEN + " agora!");
+
+
+
+    }
+
 
     @Override
     public void onDisable() {
