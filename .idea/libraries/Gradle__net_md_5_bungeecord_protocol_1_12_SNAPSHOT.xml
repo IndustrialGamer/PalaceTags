@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: net.md-5:bungeecord-protocol:1.12-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.md-5/bungeecord-protocol/1.12-SNAPSHOT/8840ed0d17f7f522057f96e458987fdb66eba8b9/bungeecord-protocol-1.12-SNAPSHOT.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.md-5/bungeecord-protocol/1.12-SNAPSHOT/d0d9a894d4ae1406a541a86a6e77328974b412eb/bungeecord-protocol-1.12-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.md-5/bungeecord-protocol/1.12-SNAPSHOT/bda31722dc7161c5618f0e1aa44d67b882631f66/bungeecord-protocol-1.12-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.md-5/bungeecord-protocol/1.12-SNAPSHOT/e5f3d74be5e6260b096dfe2c0fa399544df13588/bungeecord-protocol-1.12-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

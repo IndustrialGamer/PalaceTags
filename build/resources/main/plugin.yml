@@ -1,0 +1,15 @@
+name: Tags
+
+main: com.enjin.gamesplazabrasil.Tags
+
+version: 1.0-SNAPSHOT
+
+author: Industrial_Gamer
+
+description: Adiciona Tags
+
+commands:
+        tag:
+            description: Altera sua tag
+        settag:
+             description: Altera a tag de outro player - OP only
